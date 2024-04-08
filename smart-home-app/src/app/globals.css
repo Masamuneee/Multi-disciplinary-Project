@@ -17,13 +17,25 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
-    rgb(var(--background-start-rgb));
+    rgb(var(--background-start-rgb)); */
+}
+
+.log-in {
+  background-image: url(https://images.pexels.com/photos/949587/pexels-photo-949587.jpeg?cs=srgb&dl=pexels-rovenimagescom-949587.jpg&fm=jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.log-in-wrapper {
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+    backdrop-filter: blur(50px) saturate(180%);
+    background-color: rgba(255,255,255,.5);
 }
 
 @layer utilities {
