@@ -1,13 +1,13 @@
 'use client'
 
 import './globals.css';
+import './globalicons.css'
 
 import { Metadata } from 'next'
 import { NextUIProvider } from "@nextui-org/react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
-// import NavBar from "../components/navbar";
-// import Footer from "../components/footer";
+import NavBar from '@/components/navbar';
 import SignInPage from './signIn/page';
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ["latin"] });
@@ -28,12 +28,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={plus_jakarta_sans.className}>
         <NextUIProvider>
-          {/* <NavBar /> */}
-          <SignInPage />
-          <main className='min-h-screen'>
+          <NavBar />
+          <main className=''>
             {children}
           </main>
-          {/* <Footer /> */}
         </NextUIProvider>
       </body>
     </html>
