@@ -9,7 +9,7 @@ export default function SideBar() {
       <div className="mb-8 pl-4 pb-4 flex flex-col">
         <Image src="/logo.svg" alt="Logo" width={64} height={64} />
       </div>
-      <div>
+      <div className="flex flex-col gap-1">
         <SideBarButton icon="overview_key" title="Overview"/>
         <SideBarButton icon="devices_other" title="Devices"/>
         <SideBarButton icon="settings" title="Settings" />
