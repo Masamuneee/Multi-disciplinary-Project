@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User } from "@nextui-org/react";
+import Link from "next/link";
 import CardDevice from "@/components/cards/cardDevice";
 
 export default function Home() {
   return (
-    <main className="flex flex-col p-8 h-[100vh]">
+    <main className="flex flex-col h-full">
       <div className='flex flex-row items-center mb-5'>
         <h1 className='font-normal'>Welcome home, <span className="font-bold">John Doe</span>!</h1>
         <div className='flex flex-row items-center gap-8 ml-auto'>
@@ -53,13 +54,23 @@ export default function Home() {
       </div>
       <div className="hidden lg:grid grid-rows-2 gap-5 h-full">
         <div className="grid grid-cols-3 gap-5">
-          <CardDevice title="Camera" icon="videocam" />
-          <CardDevice title="Temperature" icon="device_thermostat" />
-          <CardDevice title="Humidity" icon="humidity_percentage" />
+          <Link href='/camera'>
+            <CardDevice title="Camera" icon="videocam" />
+          </Link>
+          <Link href='/temperature'>
+            <CardDevice title="Temperature" icon="device_thermostat" />
+          </Link>
+          <Link href='/humidity'>
+            <CardDevice title="Humidity" icon="humidity_percentage" />
+          </Link>
         </div>
         <div className="grid grid-cols-2 gap-5">
-          <CardDevice title="Light" icon="lightbulb" />
-          <CardDevice title="Sound" icon="hearing" />
+          <Link href='/light'>
+            <CardDevice title="Light" icon="lightbulb" />
+          </Link>
+          <Link href='/sound'>
+            <CardDevice title="Sound" icon="hearing" />
+          </Link>
         </div>
       </div>
 
