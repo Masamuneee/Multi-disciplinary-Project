@@ -31,7 +31,7 @@ export default function RootLayout({
         <NextUIProvider>
           <div className='flex flex-row'>
             <SideBar />
-            <main className='w-full bg-gray-100'>
+            <main className='p-8 h-[100vh] w-full bg-gray-100'>
               {children}
             </main>
           </div>
