@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import SideBarButton from "@/components/buttons/sideBarButton";
+import Link from "next/link";
 
 export default function SideBar() {
   return (
     <div className="w-[15%] h-[100vh] bg-white py-8 px-3 flex flex-col">
       <div className="mb-8 pl-4 pb-4 flex flex-col">
-        <Image src="/logo.svg" alt="Logo" width={64} height={64} />
+        <Link href="/">
+          <Image src="/logo.svg" alt="Logo" width={64} height={64} />
+        </Link>
       </div>
       <div className="flex flex-col gap-1">
         <SideBarButton icon="overview_key" title="Overview"/>
