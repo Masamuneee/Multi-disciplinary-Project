@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithEmailAndPassword, User, signOut } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, User, signOut, createUserWithEmailAndPassword } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDJ0xAZsdQxFr3MygRLbcGtx2ddBU6XWFE",
@@ -20,6 +20,20 @@ export const signIn = async (email: string, password: string): Promise<User | nu
   }
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userCredential.user);
+    return userCredential.user;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
+export const signUp = async (email: string, password: string): Promise<User | null> => {
+  if (!email || !password) {
+    return null;
+  }
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     console.log(userCredential.user);
     return userCredential.user;
   } catch (error) {

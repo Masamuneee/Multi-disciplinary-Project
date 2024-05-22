@@ -3,23 +3,22 @@
 import { Input } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import Image from 'next/image';
-import { signIn } from "@/utils/firebase.util";
+import { signUp } from "@/utils/firebase.util";
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 
-export default function SignInPage() {
+export default function SignUpPage() {
   const router = useRouter();
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const email = e.currentTarget.username.value + '@smarthome.app';
     const password = e.currentTarget.password.value;
     try {
-      await signIn(email, password);
-      console.log('Form submitted');
+      await signUp(email, password);
       router.push('/home');
+      console.log('Form submitted');
     }
-    catch (error) {
-      console.error('Error signing in:', error);
+    catch {
+      console.log('Form submission failed');
     }
   }
 
@@ -38,7 +37,7 @@ export default function SignInPage() {
         </div>
         <div className="flex flex-row">
           <div className="w-1/2">
-            <h1 className="text-5xl">Sign in</h1>
+            <h1 className="text-5xl">Sign up</h1>
             <p className="mt-4">to continue to Smart Home</p>
           </div>
           <form className="w-1/2 flex flex-col gap-4" onSubmit={onSubmit}>
@@ -46,14 +45,9 @@ export default function SignInPage() {
               <Input name='username' size="lg" type="text" label="Username" />
               <Input name='password' size="lg" type="password" label="Password" />
             </div>
-            <div className="flex flex-row gap-4 ml-auto">
-              <Link href='/register'>
-                <Button radius="full" color="primary" size="lg" variant="light" className="text-white">
-                  Create account
-                </Button>
-              </Link>
+            <div className="flex flex-row ml-auto">
               <Button type="submit" radius="full" color="primary" size="lg">
-                Sign in
+                Register
               </Button>
             </div>
           </form>
