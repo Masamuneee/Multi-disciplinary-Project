@@ -18,7 +18,9 @@ export default function SideBar() {
         <SideBarButton icon="settings" title="Settings" />
       </div>
       <div className="mt-auto">
-        <SideBarButton icon="logout" title="Logout" />
+        <Link href="/signIn">
+          <SideBarButton icon="logout" title="Logout" />
+        </Link>
       </div>
     </div>
   );

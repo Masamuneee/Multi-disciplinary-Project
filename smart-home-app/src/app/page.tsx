@@ -4,12 +4,21 @@ import Image from "next/image";
 import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Avatar, User } from "@nextui-org/react";
 import Link from "next/link";
 import CardDevice from "@/components/cards/cardDevice";
+import { logOut } from "@/utils/firebase.util";
+import { auth } from "@/utils/firebase.util";
+import extractUsernameFromEmail from "@/utils/extractUsername.util";
 
 export default function Home() {
+  const handleSignOut = async () => {
+    console.log('Signing out...');
+    await logOut();
+  }
+  const extractedName = extractUsernameFromEmail(auth.currentUser?.email);
+
   return (
     <main className="flex flex-col h-full">
       <div className='flex flex-row items-center mb-5'>
-        <h1 className='font-normal'>Welcome home, <span className="font-bold">John Doe</span>!</h1>
+        <h1 className='font-normal'>Welcome home, <span className="font-bold">{extractedName}</span>!</h1>
         <div className='flex flex-row items-center gap-8 ml-auto'>
           <div className="flex items-center p-3 hover:bg-slate-200 rounded-full hover:shadow-md transition-[0.2s]">
             <span className="material-symbols-rounded">
@@ -27,31 +36,16 @@ export default function Home() {
                 />
               </DropdownTrigger>
               <DropdownMenu aria-label="Profile Actions" variant="flat">
-                <DropdownItem key="profile" className="h-14 gap-2">
-                  <p className="font-semibold">Signed in as</p>
-                  <p className="font-semibold">jonhdoe@example.com</p>
-                </DropdownItem>
-                <DropdownItem key="settings">
-                  My Settings
-                </DropdownItem>
-                <DropdownItem key="analytics">
-                  Analytics
-                </DropdownItem>
-                <DropdownItem key="configurations">
-                  Configurations
-                </DropdownItem>
-                <DropdownItem key="help_and_feedback">
-                  Help & Feedback
-                </DropdownItem>
-                <DropdownItem key="logout" color="danger">
+                <DropdownItem onClick={handleSignOut} textValue="f" key="logout" color="danger">
                   Log Out
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
-            <p>John Doe</p>
+            <p>{extractedName}</p>
           </div>
         </div>
       </div>
+      
       <div className="hidden lg:grid grid-rows-2 gap-5 h-full">
         <div className="grid grid-cols-3 gap-5">
           <Link href='/camera'>
