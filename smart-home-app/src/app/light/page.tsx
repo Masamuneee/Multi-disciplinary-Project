@@ -1,7 +1,13 @@
-export default function HumidityPage() {
+import React from 'react';
+import Light from './light';
+import LightChart from './light_chart';
+
+export default function LightPage() {
   return (
     <div>
-      <p>Implement your page here.</p>
+      <Light />
+      <br />
+      <LightChart />
     </div>
   );
 }
