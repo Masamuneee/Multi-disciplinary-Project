@@ -2,9 +2,7 @@
 
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Chip, Tooltip, Pagination, Input, Button, useDisclosure } from "@nextui-org/react";
 import axios from "axios";
-import { use, useEffect, useState } from 'react';
-import { cookies } from "next/headers";
-import { set } from "firebase/database";
+import { useEffect, useState } from 'react';
 
 
 export default function Light() {
