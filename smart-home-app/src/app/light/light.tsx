@@ -12,7 +12,7 @@ export default function Light() {
     useEffect(() => {
         axios.get('https://io.adafruit.com/api/v2/Masamunee/feeds/yolo-led/data', {
           headers: {
-            'X-AIO-Key': 'secret'
+            'X-AIO-Key': 'aio_nEoS85ZuthPjqcecub7GFhvgpCcS'
           }
         }).then((response) => {
             setValue(response.data[response.data.length - 1].value);

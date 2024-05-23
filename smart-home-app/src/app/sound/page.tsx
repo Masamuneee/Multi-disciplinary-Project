@@ -1,7 +1,10 @@
+import React from 'react';
+import Sound from './sound';
+
 export default function SoundPage() {
   return (
     <div>
-      <p>Implement your page here.</p>
+      <Sound />
     </div>
   );
 }
