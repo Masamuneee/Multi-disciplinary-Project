@@ -12,9 +12,9 @@ const LineChart = () => {
   const [light, setLight] = useState<number[]>([]);
 
   useEffect(() => {
-    axios.get('https://io.adafruit.com/api/v2/Masamunee/feeds/yolo-led/data', {
+    axios.get('h', {
       headers: {
-        'X-AIO-Key': 'aio_Yshz47Mu1nqrYsCf54WFAzpQt305'
+        'hi': 'hi'
       }
     }).then((response) => {
       for (let i = 0; i < response.data.length; i++) {

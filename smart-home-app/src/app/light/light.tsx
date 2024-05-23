@@ -9,10 +9,24 @@ export default function Light() {
     const [isOn, setIsOn] = useState(false);
     const [value, setValue] = useState(0);
 
+    // useEffect(() => {
+    //     axios.get('https://io.adafruit.com/api/v2/Masamunee/feeds/yolo-led/data', {
+    //       headers: {
+    //         'X-AIO-Key': 'secret'
+    //       }
+    //     }).then((response) => {
+    //         setValue(response.data[response.data.length - 1].value);
+    //     }).catch((error) => {
+    //         console.log(error);
+    //         }
+    //     );
+    // }
+    // , []);
+
     useEffect(() => {
-        axios.get('https://io.adafruit.com/api/v2/Masamunee/feeds/yolo-led/data', {
+        axios.get('localhost', {
           headers: {
-            'X-AIO-Key': 'aio_Yshz47Mu1nqrYsCf54WFAzpQt305'
+            "hi": "hi"
           }
         }).then((response) => {
             setValue(response.data[response.data.length - 1].value);
