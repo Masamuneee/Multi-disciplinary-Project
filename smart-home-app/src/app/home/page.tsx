@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <ProtectedRoute>
-      <main className="flex flex-col h-full">
+      {/* <main className="flex flex-col items-stretch bg-gray-300"> */}
         <div className='flex flex-row items-center mb-5'>
           <h1 className='font-normal'>Welcome home, <span className="font-bold">{extractedName}</span>!</h1>
           <div className='flex flex-row items-center gap-8 ml-auto'>
@@ -51,7 +51,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hidden lg:grid grid-rows-2 gap-5 h-full">
+        <div className="hidden lg:grid grid-rows-2 gap-5 h-full items-stretch">
           <div className="grid grid-cols-3 gap-5">
             <Link href='/camera'>
               <CardDevice title="Camera" icon="videocam" />
@@ -80,7 +80,7 @@ export default function Home() {
           <CardDevice title="Light" icon="lightbulb" />
           <CardDevice title="Sound" icon="hearing" />
         </div>
-      </main>
+      {/* </main> */}
     </ProtectedRoute>
   );
 }

@@ -3,6 +3,7 @@ import {
     onAuthStateChanged,
 } from 'firebase/auth';
 import { auth, signIn, signUp, logOut } from '@/utils/firebase.util';
+import { useRouter } from 'next/navigation';
 import SignInPage from '@/app/signIn/page';
 import SideBar from '@/components/sidebar';
 
@@ -15,6 +16,7 @@ export const AuthContextProvider = ({
 }: { children: React.ReactNode }) => {
     const [user, setUser] = React.useState(null);
     const [loading, setLoading] = React.useState(true);
+    const router = useRouter();
 
     React.useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -22,6 +24,7 @@ export const AuthContextProvider = ({
                 setUser(user);
                 localStorage.setItem('user', JSON.stringify(user));
             } else {
+                router.push('/');
                 setUser(null);
             }
             setLoading(false);
