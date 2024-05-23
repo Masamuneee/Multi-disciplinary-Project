@@ -5,7 +5,7 @@ export default function TemperatureLayout({
 }) {
   return (
     <main>
-      <h1 className="font-bold mb-5">Temperature</h1>
+      <h1 className="font-bold mb-5">Temperature Dashboard</h1>
       {children}
     </main>
   )
