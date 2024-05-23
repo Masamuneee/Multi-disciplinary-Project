@@ -14,7 +14,7 @@ const LineChart = () => {
   useEffect(() => {
     axios.get('https://io.adafruit.com/api/v2/Masamunee/feeds/yolo-led/data', {
       headers: {
-        'X-AIO-Key': 'aio_Yshz47Mu1nqrYsCf54WFAzpQt305'
+        'X-AIO-Key': 'aio_nEoS85ZuthPjqcecub7GFhvgpCcS'
       }
     }).then((response) => {
       for (let i = 0; i < response.data.length; i++) {
